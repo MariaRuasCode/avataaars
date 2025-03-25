@@ -22,28 +22,22 @@ var LloydHair = /** @class */ (function (_super) {
     __extends(LloydHair, _super);
     function LloydHair() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.mask1 = lodash_1.uniqueId('react-mask-');
-        _this.mask2 = lodash_1.uniqueId('react-mask-');
-        _this.path1 = lodash_1.uniqueId('react-path-');
-        _this.path2 = lodash_1.uniqueId('react-path-');
+        _this.mask = lodash_1.uniqueId('react-mask-');
+        _this.path = lodash_1.uniqueId('react-path-');
         return _this;
     }
     LloydHair.prototype.render = function () {
-        var _a = this, mask1 = _a.mask1, mask2 = _a.mask2, path1 = _a.path1, path2 = _a.path2;
+        var _a = this, mask = _a.mask, path = _a.path;
         return (React.createElement("g", { id: "Top", strokeWidth: "1", fillRule: "evenodd" },
             React.createElement("defs", null,
-                React.createElement("rect", { id: path1, x: "0", y: "0", width: "264", height: "280" }),
-                React.createElement("path", { d: "M50 60 C30 80, 40 120, 60 140 C80 160, 100 150, 120 140 C140 130, 160 120, 180 110 C200 100, 220 80, 210 60 C200 40, 170 50, 150 50 C130 50, 110 40, 90 45 C70 50, 60 40, 50 60 Z", id: path2 })),
-            React.createElement("mask", { id: mask2, fill: "white" },
-                React.createElement("use", { xlinkHref: '#' + path1 })),
-            React.createElement("g", { id: "Top/LloydHair", mask: "url(#" + mask2 + ")" },
-                React.createElement("g", { transform: "translate(-1.000000, 0.000000)" },
-                    React.createElement("g", { id: "Hair", strokeWidth: "1", fillRule: "evenodd", transform: "translate(50, 20)" },
-                        React.createElement("mask", { id: mask1, fill: "white" },
-                            React.createElement("use", { xlinkHref: '#' + path2 })),
-                        React.createElement("use", { id: "HairShape", fill: "#FBE6D5", xlinkHref: '#' + path2 }),
-                        React.createElement(HairColor_1.default, { maskID: mask1 })),
-                    this.props.children))));
+                React.createElement("path", { d: "M80 40 Q100 0 120 40 Q140 80 100 120 Q60 160 80 200 Q100 240 60 280 H140 Q160 240 180 200 Q200 160 160 120 Q120 80 140 40 Q160 0 180 40 L80 40 Z", id: path })),
+            React.createElement("mask", { id: mask, fill: "white" },
+                React.createElement("use", { xlinkHref: "#" + path })),
+            React.createElement("g", { id: "Top/LloydHair" },
+                React.createElement("g", { transform: "translate(-20, 0)" },
+                    React.createElement("use", { id: "HairShape", fill: "#F4D9C6", xlinkHref: "#" + path }),
+                    React.createElement(HairColor_1.default, { maskID: mask })),
+                this.props.children)));
     };
     LloydHair.optionValue = 'LloydHair';
     return LloydHair;
