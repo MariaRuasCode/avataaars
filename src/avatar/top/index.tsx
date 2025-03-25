@@ -37,6 +37,7 @@ import WinterHat3 from './WinterHat3'
 import WinterHat4 from './WinterHat4'
 import { Selector, TopOption } from '../../options'
 import ShortHairWavy from './ShortHairWavy'
+import LloydHair from './LloydHair'
 
 export default class Top extends React.Component {
   render () {
@@ -71,6 +72,7 @@ export default class Top extends React.Component {
         <ShortHairDreads02>{children}</ShortHairDreads02>
         <ShortHairFrizzle>{children}</ShortHairFrizzle>
         <ShortHairWavy>{children}</ShortHairWavy>
+        <LloydHair>{children}</LloydHair>
         {/*
         XXX: broken, fix it later
         <ShortHairShaggy>{children}</ShortHairShaggy>*/}
