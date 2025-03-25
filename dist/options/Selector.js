@@ -77,10 +77,10 @@ var Selector = /** @class */ (function (_super) {
             return;
         }
         var _a = this.props, option = _a.option, children = _a.children;
-        var values = React.Children.map(children, 
-        // TODO: also validate and throw error if we don't see optionValue
-        function (child) { return getComponentOptionValue(child.type); });
+        var values = React.Children.map(children, function (child) { return getComponentOptionValue(child.type); });
+        console.log("Option Values: ", values); // Debugging line
         if (new Set(values).size !== (values === null || values === void 0 ? void 0 : values.length)) {
+            console.error("Duplicate values found:", values);
             throw new Error('Duplicate values');
         }
         this.optionContext.setOptions(option.key, values);
