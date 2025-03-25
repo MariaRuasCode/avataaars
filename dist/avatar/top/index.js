@@ -52,6 +52,7 @@ var WinterHat2_1 = require("./WinterHat2");
 var WinterHat3_1 = require("./WinterHat3");
 var WinterHat4_1 = require("./WinterHat4");
 var options_1 = require("../../options");
+var ShortHairWavy_1 = require("./ShortHairWavy");
 var Top = /** @class */ (function (_super) {
     __extends(Top, _super);
     function Top() {
@@ -87,7 +88,7 @@ var Top = /** @class */ (function (_super) {
             React.createElement(ShortHairDreads01_1.default, null, children),
             React.createElement(ShortHairDreads02_1.default, null, children),
             React.createElement(ShortHairFrizzle_1.default, null, children),
-            React.createElement(LongHairCurly_1.default, null, children),
+            React.createElement(ShortHairWavy_1.default, null, children),
             React.createElement(ShortHairShaggyMullet_1.default, null, children),
             React.createElement(ShortHairShortCurly_1.default, null, children),
             React.createElement(ShortHairShortFlat_1.default, null, children),
