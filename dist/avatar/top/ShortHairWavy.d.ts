@@ -1,3 +1,10 @@
-import React from "react";
-declare const ShortHairWavy: React.FC;
-export default ShortHairWavy;
+import * as React from 'react';
+export default class ShortHairWavy extends React.Component {
+    static optionValue: string;
+    private filter1;
+    private mask1;
+    private mask2;
+    private path1;
+    private path2;
+    render(): JSX.Element;
+}
