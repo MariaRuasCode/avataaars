@@ -69,6 +69,7 @@ export default class Top extends React.Component {
         <ShortHairDreads01>{children}</ShortHairDreads01>
         <ShortHairDreads02>{children}</ShortHairDreads02>
         <ShortHairFrizzle>{children}</ShortHairFrizzle>
+        <LongHairCurly>{children}</LongHairCurly>
         {/*
         XXX: broken, fix it later
         <ShortHairShaggy>{children}</ShortHairShaggy>*/}

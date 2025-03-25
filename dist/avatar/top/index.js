@@ -87,6 +87,7 @@ var Top = /** @class */ (function (_super) {
             React.createElement(ShortHairDreads01_1.default, null, children),
             React.createElement(ShortHairDreads02_1.default, null, children),
             React.createElement(ShortHairFrizzle_1.default, null, children),
+            React.createElement(LongHairCurly_1.default, null, children),
             React.createElement(ShortHairShaggyMullet_1.default, null, children),
             React.createElement(ShortHairShortCurly_1.default, null, children),
             React.createElement(ShortHairShortFlat_1.default, null, children),
