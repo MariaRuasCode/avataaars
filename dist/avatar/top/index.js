@@ -62,6 +62,7 @@ var Top = /** @class */ (function (_super) {
     }
     Top.prototype.render = function () {
         var _a = this.props, children = _a.children, customHairPath = _a.customHairPath;
+        var isValidCustomHair = typeof customHairPath === 'string' && customHairPath.trim().length > 0;
         return (React.createElement(options_1.Selector, { defaultOption: LongHairStraight_1.default, option: options_1.TopOption },
             React.createElement(NoHair_1.default, null, children),
             React.createElement(Eyepatch_1.default, null, children),
@@ -92,7 +93,7 @@ var Top = /** @class */ (function (_super) {
             React.createElement(ShortHairFrizzle_1.default, null, children),
             React.createElement(ShortHairWavy_1.default, null, children),
             React.createElement(LloydHair_1.default, null, children),
-            customHairPath && (React.createElement(CustomHair_1.default, { svgPath: customHairPath })),
+            isValidCustomHair ? React.createElement(CustomHair_1.default, { svgPath: customHairPath !== null && customHairPath !== void 0 ? customHairPath : '' }) : null,
             React.createElement(ShortHairShaggyMullet_1.default, null, children),
             React.createElement(ShortHairShortCurly_1.default, null, children),
             React.createElement(ShortHairShortFlat_1.default, null, children),

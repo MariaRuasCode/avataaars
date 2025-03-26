@@ -41,11 +41,14 @@ import LloydHair from './LloydHair'
 import CustomHair from './CustomHair'
 
 interface TopProps {
-  customHairPath?: string;
+  customHairPath?: string | null;
 }
+
 export default class Top extends React.Component<TopProps> {
   render () {
     const { children, customHairPath } = this.props;
+    const isValidCustomHair = typeof customHairPath === 'string' && customHairPath.trim().length > 0;
+
     return (
       <Selector defaultOption={LongHairStraight} option={TopOption}>
         <NoHair>{children}</NoHair>
@@ -77,9 +80,8 @@ export default class Top extends React.Component<TopProps> {
         <ShortHairFrizzle>{children}</ShortHairFrizzle>
         <ShortHairWavy>{children}</ShortHairWavy>
         <LloydHair>{children}</LloydHair>
-{customHairPath && (
-  <CustomHair svgPath={customHairPath} />
-)}
+        {isValidCustomHair ? <CustomHair svgPath={customHairPath ?? ''} /> : null}
+
         {/*
         XXX: broken, fix it later
         <ShortHairShaggy>{children}</ShortHairShaggy>*/}
