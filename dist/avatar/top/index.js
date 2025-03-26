@@ -92,7 +92,7 @@ var Top = /** @class */ (function (_super) {
             React.createElement(ShortHairFrizzle_1.default, null, children),
             React.createElement(ShortHairWavy_1.default, null, children),
             React.createElement(LloydHair_1.default, null, children),
-            customHairPath ? (React.createElement(CustomHair_1.default, { svgPath: customHairPath }, children)) : null,
+            customHairPath && (React.createElement(CustomHair_1.default, { svgPath: customHairPath })),
             React.createElement(ShortHairShaggyMullet_1.default, null, children),
             React.createElement(ShortHairShortCurly_1.default, null, children),
             React.createElement(ShortHairShortFlat_1.default, null, children),
