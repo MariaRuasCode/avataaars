@@ -69,6 +69,13 @@ export const SkinOption = new Option({
   label: '🎨 Skin',
 })
 
+export const CustomHairOption = new Option({
+  key: 'customHairType',
+  label: 'Custom Hair',
+});
+
+
+
 export const allOptions = [
   TopOption,
   AccessoriesOption,
@@ -83,4 +90,5 @@ export const allOptions = [
   EyebrowOption,
   MouthOption,
   SkinOption,
+  CustomHairOption,
 ]

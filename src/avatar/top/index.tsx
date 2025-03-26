@@ -38,10 +38,14 @@ import WinterHat4 from './WinterHat4'
 import { Selector, TopOption } from '../../options'
 import ShortHairWavy from './ShortHairWavy'
 import LloydHair from './LloydHair'
+import CustomHair from './CustomHair'
 
-export default class Top extends React.Component {
+interface TopProps {
+  customHairPath?: string;
+}
+export default class Top extends React.Component<TopProps> {
   render () {
-    const { children } = this.props
+    const { children, customHairPath } = this.props;
     return (
       <Selector defaultOption={LongHairStraight} option={TopOption}>
         <NoHair>{children}</NoHair>
@@ -73,6 +77,11 @@ export default class Top extends React.Component {
         <ShortHairFrizzle>{children}</ShortHairFrizzle>
         <ShortHairWavy>{children}</ShortHairWavy>
         <LloydHair>{children}</LloydHair>
+        {customHairPath ? (
+          <CustomHair svgPath={customHairPath}>
+            {children}
+          </CustomHair>
+        ) : null}
         {/*
         XXX: broken, fix it later
         <ShortHairShaggy>{children}</ShortHairShaggy>*/}
