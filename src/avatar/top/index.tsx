@@ -38,16 +38,12 @@ import WinterHat4 from './WinterHat4'
 import { Selector, TopOption } from '../../options'
 import ShortHairWavy from './ShortHairWavy'
 import LloydHair from './LloydHair'
-import CustomHair from './CustomHair'
 
-interface TopProps {
-  customHairPath?: string | null;
-}
 
-export default class Top extends React.Component<TopProps> {
+
+export default class Top extends React.Component {
   render () {
-    const { children, customHairPath } = this.props;
-    const isValidCustomHair = typeof customHairPath === 'string' && customHairPath.trim().length > 0;
+    const { children } = this.props
 
     return (
       <Selector defaultOption={LongHairStraight} option={TopOption}>
