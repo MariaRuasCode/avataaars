@@ -80,7 +80,6 @@ export default class Top extends React.Component<TopProps> {
         <ShortHairFrizzle>{children}</ShortHairFrizzle>
         <ShortHairWavy>{children}</ShortHairWavy>
         <LloydHair>{children}</LloydHair>
-        {isValidCustomHair ? <CustomHair svgPath={customHairPath ?? ''} /> : null}
 
         {/*
         XXX: broken, fix it later
