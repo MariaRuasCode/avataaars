@@ -54,6 +54,7 @@ var WinterHat4_1 = require("./WinterHat4");
 var options_1 = require("../../options");
 var ShortHairWavy_1 = require("./ShortHairWavy");
 var LloydHair_1 = require("./LloydHair");
+var IndexTest_1 = require("./IndexTest");
 var Top = /** @class */ (function (_super) {
     __extends(Top, _super);
     function Top() {

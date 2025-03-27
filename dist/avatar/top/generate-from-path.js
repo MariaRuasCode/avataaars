@@ -12,31 +12,42 @@ function updateIndexFile(componentName, componentsDir) {
         // Add import statement
         const importStatement = `var ${componentName}_1 = require("./${componentName}");`;
         if (!content.includes(importStatement)) {
-            const lastImportRegex = /(?<=var\s+[\w_]+\s+=\s+require\("\.\/[\w_]+"\);?\n)(?!var\s+[\w_]+)/;
-            content = content.replace(lastImportRegex, `${importStatement}\n`);
+            // Find the last import line and insert after it
+            const lines = content.split('\n');
+            let lastImportIndex = -1;
+            for (let i = 0; i < lines.length; i++) {
+                if (lines[i].match(/var\s+[\w_]+\s+=\s+require\("\.\/[\w_]+"\);?/)) {
+                    lastImportIndex = i;
+                }
+            }
+            if (lastImportIndex !== -1) {
+                lines.splice(lastImportIndex + 1, 0, importStatement);
+                content = lines.join('\n');
+            } else {
+                console.error('Could not find existing imports to insert after');
+            }
         }
 
         // Add to component list
-        const componentInsertPoint = /(React\.createElement\([\w_]+\, null\, children\),\n)(\s*)(React\.createElement\(ShortHair)/;
-        if (!content.includes(`React.createElement(${componentName}_1.default`)) {
-            content = content.replace(
-                componentInsertPoint,
-                `$1$2React.createElement(${componentName}_1.default, null, children),\n$2$3`
-            );
-        }
+const componentLine = `React.createElement(${componentName}_1.default, null, children)`;
+if (!content.includes(componentLine)) {
+    const closingPattern = /(\s*)(<\/Selector>\s*);/g;
+    if (closingPattern.test(content)) {
+        content = content.replace(closingPattern, `,\n$1${componentLine}$1$2`);
+    } else {
+        console.error('Could not find closing parenthesis to insert component');
+    }
+}
 
         fs.writeFileSync(indexPath, content);
     } catch (error) {
         console.error('Error updating index file:', error);
     }
 }
-
 function generateFromPath(svgPath, componentName, outputDir) {
-    // Generate unique IDs
     const maskId = `react-mask-${randomUUID().slice(0, 8)}`;
     const pathId = `react-path-${randomUUID().slice(0, 8)}`;
 
-    // Generate JS component
     const jsContent = `"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
@@ -82,7 +93,6 @@ var ${componentName} = /** @class */ (function (_super) {
 }(React.Component));
 exports.default = ${componentName};`;
 
-    // Generate TypeScript declaration
     const dtsContent = `import * as React from 'react';
 export default class ${componentName} extends React.Component {
     static optionValue: string;
@@ -91,20 +101,16 @@ export default class ${componentName} extends React.Component {
     render(): JSX.Element;
 }`;
 
-    // Create output directory
     if (!fs.existsSync(outputDir)) {
         fs.mkdirSync(outputDir, { recursive: true });
     }
 
-    // Write component files
     fs.writeFileSync(path.join(outputDir, `${componentName}.js`), jsContent);
     fs.writeFileSync(path.join(outputDir, `${componentName}.d.ts`), dtsContent);
 
-    // Update index file
     updateIndexFile(componentName, path.dirname(outputDir));
 }
 
-// CLI execution
 const args = process.argv.slice(2);
 if (args.length < 3) {
     console.log('Usage: node generate-from-path.js "<svg-path>" ComponentName ./output-dir');
