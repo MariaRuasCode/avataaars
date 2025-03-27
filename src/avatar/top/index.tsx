@@ -35,6 +35,7 @@ import WinterHat1 from './WinterHat1'
 import WinterHat2 from './WinterHat2'
 import WinterHat3 from './WinterHat3'
 import WinterHat4 from './WinterHat4'
+import CabeloNovo from './CabeloNovo'
 import { Selector, TopOption } from '../../options'
 import ShortHairWavy from './ShortHairWavy'
 import LloydHair from './LloydHair'
@@ -88,6 +89,8 @@ export default class Top extends React.Component {
         <ShortHairSides>{children}</ShortHairSides>
         <ShortHairTheCaesar>{children}</ShortHairTheCaesar>
         <ShortHairTheCaesarSidePart>{children}</ShortHairTheCaesarSidePart>
+        <CabeloNovo>{children}</CabeloNovo>
+
       </Selector>
     )
   }
