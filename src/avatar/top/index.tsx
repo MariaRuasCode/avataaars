@@ -77,10 +77,6 @@ export default class Top extends React.Component {
         <ShortHairFrizzle>{children}</ShortHairFrizzle>
         <ShortHairWavy>{children}</ShortHairWavy>
         <LloydHair>{children}</LloydHair>
-
-        {/*
-        XXX: broken, fix it later
-        <ShortHairShaggy>{children}</ShortHairShaggy>*/}
         <ShortHairShaggyMullet>{children}</ShortHairShaggyMullet>
         <ShortHairShortCurly>{children}</ShortHairShortCurly>
         <ShortHairShortFlat>{children}</ShortHairShortFlat>

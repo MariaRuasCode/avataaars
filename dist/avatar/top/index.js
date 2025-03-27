@@ -51,12 +51,10 @@ var WinterHat1_1 = require("./WinterHat1");
 var WinterHat2_1 = require("./WinterHat2");
 var WinterHat3_1 = require("./WinterHat3");
 var WinterHat4_1 = require("./WinterHat4");
+var CabeloNovo_1 = require("./CabeloNovo");
 var options_1 = require("../../options");
 var ShortHairWavy_1 = require("./ShortHairWavy");
 var LloydHair_1 = require("./LloydHair");
-var IndexTest_1 = require("./IndexTest");
-var CabeloNovo_1 = require("./CabeloNovo");
-var CabeloNovdffdo_1 = require("./CabeloNovdffdo");
 var Top = /** @class */ (function (_super) {
     __extends(Top, _super);
     function Top() {
@@ -101,7 +99,8 @@ var Top = /** @class */ (function (_super) {
             React.createElement(ShortHairShortWaved_1.default, null, children),
             React.createElement(ShortHairSides_1.default, null, children),
             React.createElement(ShortHairTheCaesar_1.default, null, children),
-            React.createElement(ShortHairTheCaesarSidePart_1.default, null, children)));
+            React.createElement(ShortHairTheCaesarSidePart_1.default, null, children),
+            React.createElement(CabeloNovo_1.default, null, children)));
     };
     return Top;
 }(React.Component));
