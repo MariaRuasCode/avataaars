@@ -55,6 +55,8 @@ var options_1 = require("../../options");
 var ShortHairWavy_1 = require("./ShortHairWavy");
 var LloydHair_1 = require("./LloydHair");
 var IndexTest_1 = require("./IndexTest");
+var CabeloNovo_1 = require("./CabeloNovo");
+var CabeloNovdffdo_1 = require("./CabeloNovdffdo");
 var Top = /** @class */ (function (_super) {
     __extends(Top, _super);
     function Top() {
